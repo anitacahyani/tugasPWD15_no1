@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menghitung Determinan</title>
+    <script language="JavaScript">
+        function hitungDeterminan() {
+            var A = parseFloat(document.formDet.A.value);
+            var B = parseFloat(document.formDet.B.value);
+            var C = parseFloat(document.formDet.C.value);
+
+            var D = (B * B) - (4 * A * C);
+            var keterangan = "";
+
+            if (D > 0) {
+                keterangan = "Berada di atas garis kurva";
+            } else if (D == 0) {
+                keterangan = "Berada di garis kurva";
+            } else {
+                keterangan = "Berada di bawah garis kurva";
+            }
+
+            document.getElementById("hasil").innerHTML =
+                "Nilai Determinan = " + D + "<br>" +
+                "Keterangan : " + keterangan;
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Perhitungan Determinan</h3>
+
+    <form name="formDet">
+        Nilai A : <br>
+        <input type="text" name="A"><br><br>
+
+        Nilai B : <br>
+        <input type="text" name="B"><br><br>
+
+        Nilai C : <br>
+        <input type="text" name="C"><br><br>
+
+        <input type="button" value="Hitung Determinan" onclick="hitungDeterminan()">
+    </form>
+
+    <p id="hasil"></p>
+</body>
+</html>
